@@ -1,0 +1,15 @@
+import requests
+
+
+def test_validate_token(token):
+    headers = {
+        'Authorization': f'Bearer {token}'
+    }
+    response = requests.post('http://127.0.0.1:8000/ping', headers=headers)
+
+    return response.text
+
+
+token = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImJlNzgyM2VmMDFiZDRkMmI5NjI3NDE2NThkMjA4MDdlZmVlNmRlNWMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZmFzdGFwaS1maXJlYmFzZS1hdXRoLTdiMjVhIiwiYXVkIjoiZmFzdGFwaS1maXJlYmFzZS1hdXRoLTdiMjVhIiwiYXV0aF90aW1lIjoxNzAyNzIzNTYxLCJ1c2VyX2lkIjoiVjFGZTRmS3JIMWcwdk5ISkxzU2NlMkp2YnZwMSIsInN1YiI6IlYxRmU0ZktySDFnMHZOSEpMc1NjZTJKdmJ2cDEiLCJpYXQiOjE3MDI3MjM1NjEsImV4cCI6MTcwMjcyNzE2MSwiZW1haWwiOiJleGFtcGxlQG1haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImV4YW1wbGVAbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.Fu9X5j9hyAhZVaMW-Ixi_97DYubJp4l3qgI1K7sNCbUFN4futF-54KUrOsQ-Yz9OiZHnHo0Y1Ed-cbmTznobdjGXyvYMgndK9e_TzxHFolw1dqKVKMnDpXduhhyc2Zh0EdATWLt5fBLE3rG4GWhOQotD-Lv6YofV1XRxZpJU0dElyvCXppkIQFn1M5o8t7EGLc_x8sOARPt_taKqqGdaWEg60Pa5QvNawhP9uiJJ7TMSuBmERptJiX48ktQAFZEXl-c3-UQrdH-hLSDPOAnyYKmBFh0vcDOwFSHplukAsi4h06l3SIqS7JHrnCNL1nllMD4DWQPST8KDiEJ4zvPxQQ"
+print(test_validate_token(token))
+
